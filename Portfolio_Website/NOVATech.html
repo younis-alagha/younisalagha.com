@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>NovaTech Retail Data Warehouse | Younis Alagha</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="A 3-layer SQL Server retail data warehouse built to turn messy store data into clear insights on employee performance, coaching, departments, and store health." />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Younis Alagha</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="index.html#projects">Projects</a></li>
+					<li><a href="AboutMe.html">About Me</a></li>
+					<li><a href="elements.html">Contact</a></li>
+				</ul>
+				<ul class="icons">
+					<li>
+						<a href="https://www.linkedin.com/in/younis-alagha-60159526b" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer">
+							<span class="label">LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/younis-alagha/NovaTech-Retail-DW" class="icon brands fa-github" target="_blank" rel="noopener noreferrer">
+							<span class="label">GitHub</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- ① HERO -->
+				<section class="post tf-hero">
+					<div class="tf-hero-left">
+						<span class="tf-badge-label">SQL Project</span>
+						<h1 class="tf-hero-title">NovaTech Retail<br />Data Warehouse</h1>
+						<p class="tf-hero-sub">
+							A 3-layer SQL Server warehouse that transforms raw retail store data into a
+							structured performance system — covering employee results, coaching targets,
+							department comparisons, and store-level trends.
+						</p>
+						<div class="tf-stack">
+							<span class="tf-badge">SQL Server</span>
+							<span class="tf-badge">T-SQL</span>
+							<span class="tf-badge">Medallion Architecture</span>
+							<span class="tf-badge">ETL</span>
+							<span class="tf-badge">Window Functions</span>
+						</div>
+						<ul class="actions tf-actions">
+							<li><a href="#gold" class="button primary scrolly">View Gold Layer</a></li>
+							<li><a href="https://github.com/younis-alagha/NovaTech-Retail-DW" class="button icon brands fa-github" target="_blank" rel="noopener noreferrer"> GitHub</a></li>
+						</ul>
+					</div>
+					<div class="tf-hero-right">
+						<div class="tf-hero-img-wrap">
+							<img src="images/1.Nova tech.png" alt="NovaTech Retail Data Warehouse" />
+						</div>
+					</div>
+				</section>
+
+				<!-- ② PROBLEM + SOURCES -->
+				<section class="post tf-section tf-problem">
+					<div class="tf-section-header">
+						<span class="tf-section-label">Overview</span>
+						<h2>Problem &amp; Data Sources</h2>
+					</div>
+					<div class="tf-two-col">
+						<div class="tf-problem-text">
+							<p>
+								Retail data is messy by default — files from different systems, inconsistent
+								columns, duplicates, and raw numbers that don't tell a story. This project
+								transforms three raw source tables into a clean warehouse that answers real
+								management questions about people, products, and store performance.
+							</p>
+							<div class="tf-q-card" style="margin-top:1.5rem;">
+								<span class="tf-q-icon">🗄️</span>
+								<p><strong>Source Tables:</strong> raw_employees, raw_products, raw_pos_transactions</p>
+							</div>
+						</div>
+						<div class="tf-question-cards">
+							<div class="tf-q-card">
+								<span class="tf-q-icon">👤</span>
+								<p>Who is performing well and who needs coaching?</p>
+							</div>
+							<div class="tf-q-card">
+								<span class="tf-q-icon">📊</span>
+								<p>Is employee performance improving over time?</p>
+							</div>
+							<div class="tf-q-card">
+								<span class="tf-q-icon">🏬</span>
+								<p>Which department is leading and which is lagging?</p>
+							</div>
+							<div class="tf-q-card">
+								<span class="tf-q-icon">📈</span>
+								<p>How is the store performing month by month?</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ③ ARCHITECTURE -->
+				<section class="post tf-section tf-arch" id="architecture">
+					<div class="tf-section-header">
+						<span class="tf-section-label">Architecture</span>
+						<h2>Medallion Pipeline</h2>
+					</div>
+					<div class="tf-pipeline">
+						<div class="tf-pipe-step">
+							<div class="tf-pipe-icon">📂</div>
+							<div class="tf-pipe-label">3 CSV Files</div>
+							<div class="tf-pipe-desc">Raw store source data</div>
+						</div>
+						<div class="tf-pipe-arrow">→</div>
+						<div class="tf-pipe-step tf-pipe-bronze">
+							<div class="tf-pipe-icon">🟤</div>
+							<div class="tf-pipe-label">Bronze</div>
+							<div class="tf-pipe-desc">Raw ingestion, no transformation</div>
+						</div>
+						<div class="tf-pipe-arrow">→</div>
+						<div class="tf-pipe-step tf-pipe-silver">
+							<div class="tf-pipe-icon">⚪</div>
+							<div class="tf-pipe-label">Silver</div>
+							<div class="tf-pipe-desc">Cleaning, deduplication, standardization</div>
+						</div>
+						<div class="tf-pipe-arrow">→</div>
+						<div class="tf-pipe-step tf-pipe-gold">
+							<div class="tf-pipe-icon">🟡</div>
+							<div class="tf-pipe-label">Gold</div>
+							<div class="tf-pipe-desc">7 business views for reporting</div>
+						</div>
+					</div>
+					<div class="tf-arch-cards" style="grid-template-columns: repeat(3,1fr);">
+						<div class="tf-arch-card bronze">
+							<h4>Bronze</h4>
+							<p>Raw CSV files loaded into SQL Server as-is using stored procedures. No business logic applied — exact copy of source structure.</p>
+						</div>
+						<div class="tf-arch-card silver">
+							<h4>Silver</h4>
+							<p>Names cleaned, data types fixed, duplicates removed, department values standardized, and invalid rows filtered out.</p>
+						</div>
+						<div class="tf-arch-card gold">
+							<h4>Gold</h4>
+							<p>Seven reporting views built using window functions, aggregations, and KPI logic — ready for analysis and decision-making.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- ④ GOLD LAYER VIEWS -->
+				<section class="post tf-section nt-gold" id="gold">
+					<div class="tf-section-header">
+						<span class="tf-section-label">Gold Layer</span>
+						<h2>Business Views</h2>
+					</div>
+					<div class="nt-views-grid">
+						<div class="nt-view-card">
+							<code class="nt-view-name">vw_employee_monthly</code>
+							<h4>Employee Performance</h4>
+							<p>Measures each employee monthly across total sales, sales per hour, protection attach, membership attach, service attach, and return rate.</p>
+						</div>
+						<div class="nt-view-card">
+							<code class="nt-view-name">vw_product_performance</code>
+							<h4>Product Performance</h4>
+							<p>Shows which products are selling, attaching protection plans, and being returned — to identify what drives and what drags results.</p>
+						</div>
+						<div class="nt-view-card">
+							<code class="nt-view-name">vw_coaching_targets</code>
+							<h4>Coaching Targets</h4>
+							<p>Flags high-volume sellers with weak attach performance so managers can identify and prioritize coaching conversations faster.</p>
+						</div>
+						<div class="nt-view-card">
+							<code class="nt-view-name">vw_employee_trend</code>
+							<h4>Employee Trend</h4>
+							<p>Compares performance month over month using LAG and window functions to show whether an employee is improving, declining, or flat.</p>
+						</div>
+						<div class="nt-view-card">
+							<code class="nt-view-name">vw_employee_scorecard</code>
+							<h4>Employee Scorecard</h4>
+							<p>One-row summary per employee with latest performance, historical averages, and an overall trend direction — a single view for reviews.</p>
+						</div>
+						<div class="nt-view-card">
+							<code class="nt-view-name">vw_department_summary</code>
+							<h4>Department Summary</h4>
+							<p>Rolls individual performance up to department level so leadership can compare monthly team results across the store.</p>
+						</div>
+						<div class="nt-view-card nt-view-wide">
+							<code class="nt-view-name">vw_store_monthly</code>
+							<h4>Store Summary</h4>
+							<p>One row per month covering total sales, attach rates, and overall store health — the top-level view for store management reporting.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- ⑤ OUTCOME -->
+				<section class="post tf-section tf-outcome">
+					<div class="tf-outcome-inner">
+						<span class="tf-section-label">Outcome</span>
+						<h2>From Raw Store Data to a Performance System</h2>
+						<p>
+							Three source files. One structured warehouse. Seven business views.
+							The system covers the full pipeline — ingestion, cleaning, and reporting —
+							and delivers clear answers on employee performance, coaching needs,
+							department results, and store-level trends.
+						</p>
+						<div class="tf-tech-grid" style="margin: 2rem 0;">
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">🏗️</div>
+								<p>Medallion warehouse: Bronze → Silver → Gold</p>
+							</div>
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">🧹</div>
+								<p>SQL cleaning: deduplication, type fixes, ROW_NUMBER()</p>
+							</div>
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">🔢</div>
+								<p>Window functions: LAG, PERCENT_RANK, ROW_NUMBER</p>
+							</div>
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">📋</div>
+								<p>7 Gold views covering employees, products, and store</p>
+							</div>
+						</div>
+						<ul class="actions tf-outcome-actions">
+							<li><a href="https://github.com/younis-alagha/NovaTech-Retail-DW" class="button primary large icon brands fa-github" target="_blank" rel="noopener noreferrer"> Explore Repository</a></li>
+						</ul>
+					</div>
+				</section>
+
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<section class="split contact">
+					<section class="alt">
+						<h3>Location</h3>
+						<p>Hamilton, ON</p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="mailto:yalagha@outlook.com">yalagha@outlook.com</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+							<li>
+								<a href="https://www.linkedin.com/in/younis-alagha-60159526b" class="icon brands alt fa-linkedin" target="_blank" rel="noopener noreferrer">
+									<span class="label">LinkedIn</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/younis-alagha" class="icon brands alt fa-github" target="_blank" rel="noopener noreferrer">
+									<span class="label">GitHub</span>
+								</a>
+							</li>
+						</ul>
+					</section>
+				</section>
+			</footer>
+
+			<div id="copyright">
+				<ul><li>&copy; Younis Alagha</li></ul>
+			</div>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
