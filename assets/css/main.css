@@ -5035,14 +5035,78 @@ input, select, textarea {
 .hero-divider { display: none !important; }
 .hero-role    { display: none !important; }
 
+/* Scroll-down indicator */
+.hero-scroll-hint {
+	position: absolute;
+	bottom: 5.5rem; /* clears the 4rem nav overlap + breathing room */
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.4rem;
+	opacity: 0.5;
+	animation: scrollBounce 2s infinite;
+	cursor: pointer;
+	text-decoration: none !important;
+	border: none !important;
+}
+
+.hero-scroll-hint span {
+	font-size: 0.7rem;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.hero-scroll-hint svg {
+	width: 20px;
+	height: 20px;
+	stroke: #fff;
+	fill: none;
+	stroke-width: 2;
+	stroke-linecap: round;
+}
+
+@keyframes scrollBounce {
+	0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+	50%       { transform: translateX(-50%) translateY(7px); opacity: 0.8; }
+}
+
 @media screen and (max-width: 980px) {
 	.hero-heading { font-size: 3.4rem !important; }
 }
 
 @media screen and (max-width: 736px) {
-	#intro.home-intro { padding: 2rem !important; }
-	.hero-heading     { font-size: 2.6rem !important; }
-	.hero-actions     { flex-direction: column !important; align-items: center; }
+	#intro.home-intro {
+		padding: 1.5rem !important;
+		min-height: 100vh !important;
+		justify-content: center !important;
+	}
+	.hero-heading {
+		font-size: 3rem !important;
+	}
+	.hero-sub {
+		font-size: 1rem !important;
+		max-width: 100% !important;
+	}
+	.hero-actions {
+		flex-direction: column !important;
+		align-items: center;
+		width: 100%;
+	}
+	.hero-btn-primary,
+	.hero-btn-ghost {
+		width: 100% !important;
+		justify-content: center !important;
+		text-align: center !important;
+	}
+	/* Nav links bigger on mobile */
+	#nav ul.links li a {
+		font-size: 0.85rem !important;
+		padding: 0 1.2rem !important;
+		letter-spacing: 0.1em !important;
+	}
 }
 
 /* What I Do — Highlight Cards */
