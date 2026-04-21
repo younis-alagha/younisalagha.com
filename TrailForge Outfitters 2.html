@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TrailForge Outfitters | Retail Intelligence System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta
+			name="description"
+			content="A full SQL Server to Power BI analytics pipeline built to transform six raw CRM and ERP datasets into a business-ready retail reporting system."
+		/>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Younis Alagha</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="index.html#projects">Projects</a></li>
+					<li><a href="AboutMe.html">About Me</a></li>
+				</ul>
+				<ul class="icons">
+					<li>
+						<a href="https://www.linkedin.com/in/younis-alagha-60159526b" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer">
+							<span class="label">LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/younis-alagha/TrailForge_Outfitters" class="icon brands fa-github" target="_blank" rel="noopener noreferrer">
+							<span class="label">GitHub</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- ① HERO -->
+				<section class="post tf-hero">
+					<div class="tf-hero-left">
+						<span class="tf-badge-label">Featured Project</span>
+						<h1 class="tf-hero-title">TrailForge Outfitters<br />Retail Intelligence System</h1>
+						<p class="tf-hero-sub">
+							A full retail analytics pipeline — from raw SQL ingestion to Power BI dashboards —
+							built using a Medallion-style warehouse design across 6 source datasets.
+						</p>
+						<div class="tf-stack">
+							<span class="tf-badge">SQL Server</span>
+							<span class="tf-badge">ETL</span>
+							<span class="tf-badge">Star Schema</span>
+							<span class="tf-badge">Power BI</span>
+							<span class="tf-badge">DAX</span>
+						</div>
+						<ul class="actions tf-actions">
+							<li><a href="#dashboard" class="button primary scrolly">View Dashboard</a></li>
+							<li><a href="#architecture" class="button scrolly">SQL Architecture</a></li>
+							<li><a href="https://github.com/younis-alagha" class="button icon brands fa-github" target="_blank" rel="noopener noreferrer"> GitHub</a></li>
+						</ul>
+					</div>
+					<div class="tf-hero-right">
+						<div class="tf-hero-img-wrap">
+							<img src="images/TrailForge.png" alt="TrailForge Outfitters Dashboard" />
+						</div>
+					</div>
+				</section>
+
+				<!-- ② PROBLEM + DATA (merged) -->
+				<section class="post tf-section tf-problem">
+					<div class="tf-section-header">
+						<span class="tf-section-label">Overview</span>
+						<h2>Problem &amp; Data Sources</h2>
+					</div>
+					<div class="tf-two-col">
+						<div class="tf-problem-text">
+							<p>
+								Retail teams need answers, not raw tables. This project transforms scattered
+								transactional data from six CRM and ERP source files into a clean reporting
+								model that supports real decisions around sales, categories, products, and customers.
+							</p>
+							<div class="tf-q-card" style="margin-top:1.5rem;">
+								<span class="tf-q-icon">📂</span>
+								<p><strong>CRM:</strong> cust_info, prd_info, sales_details</p>
+							</div>
+							<div class="tf-q-card">
+								<span class="tf-q-icon">🗄️</span>
+								<p><strong>ERP:</strong> CUST_AZ12, LOC_A101, PX_CAT_G1V2</p>
+							</div>
+						</div>
+						<div class="tf-question-cards">
+							<div class="tf-q-card">
+								<span class="tf-q-icon">📈</span>
+								<p>Are sales growing or declining over time?</p>
+							</div>
+							<div class="tf-q-card">
+								<span class="tf-q-icon">📦</span>
+								<p>Which categories drive the most revenue and profit?</p>
+							</div>
+							<div class="tf-q-card">
+								<span class="tf-q-icon">🔍</span>
+								<p>Which products should be pushed or reviewed?</p>
+							</div>
+							<div class="tf-q-card">
+								<span class="tf-q-icon">👥</span>
+								<p>Which customers create the most value?</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ③ ARCHITECTURE + SQL (merged) -->
+				<section class="post tf-section tf-arch" id="architecture">
+					<div class="tf-section-header">
+						<span class="tf-section-label">Architecture</span>
+						<h2>Medallion Pipeline</h2>
+					</div>
+					<div class="tf-pipeline">
+						<div class="tf-pipe-step">
+							<div class="tf-pipe-icon">📂</div>
+							<div class="tf-pipe-label">6 CSV Files</div>
+							<div class="tf-pipe-desc">Raw CRM &amp; ERP</div>
+						</div>
+						<div class="tf-pipe-arrow">→</div>
+						<div class="tf-pipe-step tf-pipe-bronze">
+							<div class="tf-pipe-icon">🟤</div>
+							<div class="tf-pipe-label">Bronze</div>
+							<div class="tf-pipe-desc">Raw ingestion via BULK INSERT</div>
+						</div>
+						<div class="tf-pipe-arrow">→</div>
+						<div class="tf-pipe-step tf-pipe-silver">
+							<div class="tf-pipe-icon">⚪</div>
+							<div class="tf-pipe-label">Silver</div>
+							<div class="tf-pipe-desc">Cleaning, deduplication, standardization</div>
+						</div>
+						<div class="tf-pipe-arrow">→</div>
+						<div class="tf-pipe-step tf-pipe-gold">
+							<div class="tf-pipe-icon">🟡</div>
+							<div class="tf-pipe-label">Gold</div>
+							<div class="tf-pipe-desc">dim_customers, dim_products, fact_sales</div>
+						</div>
+						<div class="tf-pipe-arrow">→</div>
+						<div class="tf-pipe-step tf-pipe-bi">
+							<div class="tf-pipe-icon">📊</div>
+							<div class="tf-pipe-label">Power BI</div>
+							<div class="tf-pipe-desc">Interactive dashboards</div>
+						</div>
+					</div>
+
+					<!-- Star schema inline -->
+					<div class="tf-section-header" style="margin-top:3rem;">
+						<span class="tf-section-label">Data Model</span>
+						<h2>Star Schema</h2>
+					</div>
+					<div class="tf-schema-diagram">
+						<div class="tf-schema-dim">
+							<div class="tf-schema-box dim">dim_customers</div>
+							<div class="tf-schema-box dim">dim_date</div>
+						</div>
+						<div class="tf-schema-center">
+							<div class="tf-schema-line"></div>
+							<div class="tf-schema-box fact">fact_sales</div>
+							<div class="tf-schema-line"></div>
+						</div>
+						<div class="tf-schema-dim">
+							<div class="tf-schema-box dim">dim_products</div>
+							<div class="tf-schema-box dim">dim_categories</div>
+						</div>
+					</div>
+					<p class="tf-model-note">
+						A central fact table connected to customer and product dimensions — making filtering,
+						aggregation, and time-based reporting straightforward inside Power BI.
+					</p>
+				</section>
+
+				<!-- ④ POWER BI DASHBOARDS -->
+				<section class="post tf-section tf-dashboards" id="dashboard">
+					<div class="tf-section-header">
+						<span class="tf-section-label">Power BI</span>
+						<h2>Dashboard Pages</h2>
+					</div>
+					<div class="tf-dashboard-grid">
+						<div class="tf-dashboard-card">
+							<div class="tf-dash-header">
+								<span class="tf-dash-num">01</span>
+								<h3>Executive Overview</h3>
+							</div>
+							<div class="tf-dash-preview">
+								<div class="tf-dash-kpis">
+									<span class="tf-kpi">Total Sales</span>
+									<span class="tf-kpi">Total Profit</span>
+									<span class="tf-kpi">Orders</span>
+									<span class="tf-kpi">Margin %</span>
+								</div>
+								<img src="images/Overview.png" alt="Executive Overview Dashboard" class="tf-dash-img" />
+							</div>
+							<p>Top-level business health: are sales growing, are margins healthy, and where are trends heading?</p>
+						</div>
+						<div class="tf-dashboard-card">
+							<div class="tf-dash-header">
+								<span class="tf-dash-num">02</span>
+								<h3>Sales Yearly View</h3>
+							</div>
+							<div class="tf-dash-preview">
+								<div class="tf-dash-kpis">
+									<span class="tf-kpi">Sales by Year</span>
+									<span class="tf-kpi">YoY Growth</span>
+									<span class="tf-kpi">Profit vs Revenue</span>
+									<span class="tf-kpi">Margin %</span>
+								</div>
+								<img src="images/Sales.png" alt="Sales Yearly View Dashboard" class="tf-dash-img" />
+							</div>
+							<p>Year-over-year revenue growth, category breakdown, and margin trends across the full data range.</p>
+						</div>
+						<div class="tf-dashboard-card">
+							<div class="tf-dash-header">
+								<span class="tf-dash-num">03</span>
+								<h3>Category Performance</h3>
+							</div>
+							<div class="tf-dash-preview">
+								<div class="tf-dash-kpis">
+									<span class="tf-kpi">Sales by Category</span>
+									<span class="tf-kpi">Profit by Category</span>
+									<span class="tf-kpi">Share of Total</span>
+									<span class="tf-kpi">Margin %</span>
+								</div>
+								<img src="images/Category.png" alt="Category Performance Dashboard" class="tf-dash-img" />
+							</div>
+							<p>Which categories carry revenue vs. which are stronger from a profitability angle?</p>
+						</div>
+						<div class="tf-dashboard-card">
+							<div class="tf-dash-header">
+								<span class="tf-dash-num">04</span>
+								<h3>Product Performance</h3>
+							</div>
+							<div class="tf-dash-preview">
+								<div class="tf-dash-kpis">
+									<span class="tf-kpi">Top 10 Products</span>
+									<span class="tf-kpi">Bottom 10</span>
+									<span class="tf-kpi">Sales vs Margin</span>
+									<span class="tf-kpi">Product Table</span>
+								</div>
+								<img src="images/Product.png" alt="Product Performance Dashboard" class="tf-dash-img" />
+							</div>
+							<p>Which products drive volume, which drive profit, and which need to be reviewed or replaced?</p>
+						</div>
+						<div class="tf-dashboard-card">
+							<div class="tf-dash-header">
+								<span class="tf-dash-num">05</span>
+								<h3>Customer Value</h3>
+							</div>
+							<div class="tf-dash-preview">
+								<div class="tf-dash-kpis">
+									<span class="tf-kpi">Top Customers</span>
+									<span class="tf-kpi">Order Frequency</span>
+									<span class="tf-kpi">Avg Order Value</span>
+									<span class="tf-kpi">Segments</span>
+								</div>
+								<img src="images/Customer.png" alt="Customer Value Dashboard" class="tf-dash-img" />
+							</div>
+							<p>The most valuable customers by spend, frequency, and order behavior — for retention, not just transactions.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- ⑤ INSIGHTS -->
+				<section class="post tf-section tf-insights">
+					<div class="tf-section-header">
+						<span class="tf-section-label">Insights to Actions</span>
+						<h2>Not Just Visuals</h2>
+					</div>
+					<div class="tf-insight-cards">
+						<div class="tf-insight-card">
+							<div class="tf-insight-label insight">Insight</div>
+							<p>Sales concentrate in a few categories while some lower-volume ones carry stronger margins.</p>
+						</div>
+						<div class="tf-insight-card">
+							<div class="tf-insight-label cause">Cause</div>
+							<p>Revenue alone doesn't tell the full story — product mix and category margin shift overall performance significantly.</p>
+						</div>
+						<div class="tf-insight-card">
+							<div class="tf-insight-label action">Action</div>
+							<p>Push high-margin categories, review weak products, and focus on customer segments with stronger repeat value.</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- ⑥ OUTCOME -->
+				<section class="post tf-section tf-outcome">
+					<div class="tf-outcome-inner">
+						<span class="tf-section-label">Outcome</span>
+						<h2>From Raw Data to Real Decisions</h2>
+						<p>
+							Six raw files. One structured warehouse. Four Power BI dashboards.
+							The system covers the full stack — ingestion, cleaning, modeling, and reporting —
+							and delivers clear answers on sales, categories, products, and customers.
+						</p>
+						<div class="tf-tech-grid" style="margin: 2rem 0;">
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">🏗️</div>
+								<p>Medallion warehouse: Bronze → Silver → Gold</p>
+							</div>
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">🧹</div>
+								<p>SQL cleaning: deduplication, normalization, ROW_NUMBER()</p>
+							</div>
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">⭐</div>
+								<p>Star schema: fact_sales + 4 dimension tables</p>
+							</div>
+							<div class="tf-tech-card">
+								<div class="tf-tech-icon">📊</div>
+								<p>Power BI: 4 dashboard pages with DAX KPIs</p>
+							</div>
+						</div>
+						<ul class="actions tf-outcome-actions">
+							<li><a href="#dashboard" class="button primary large scrolly">View Dashboard</a></li>
+							<li><a href="https://github.com/younis-alagha/TrailForge_Outfitters" class="button large icon brands fa-github" target="_blank" rel="noopener noreferrer"> Explore Repository</a></li>
+						</ul>
+					</div>
+				</section>
+
+			</div>
+
+			
+
+			<div id="copyright">
+				<ul><li>&copy; Younis Alagha</li></ul>
+			</div>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Lightbox -->
+		<div id="tf-lightbox" style="
+			display:none; position:fixed; inset:0; z-index:9999;
+			background:rgba(0,0,0,0.92); cursor:zoom-out;
+			align-items:center; justify-content:center;
+		" onclick="this.style.display='none'">
+			<img id="tf-lightbox-img" src="" alt="" style="
+				max-width:92vw; max-height:90vh;
+				border-radius:10px;
+				box-shadow:0 24px 80px rgba(0,0,0,0.7);
+				pointer-events:none;
+			"/>
+			<div style="
+				position:absolute; top:18px; right:24px;
+				color:#fff; font-size:28px; cursor:pointer;
+				line-height:1; opacity:0.7;
+			" onclick="document.getElementById('tf-lightbox').style.display='none'">✕</div>
+		</div>
+
+		<script>
+			document.querySelectorAll('.tf-dash-img').forEach(function(img){
+				img.style.cursor = 'zoom-in';
+				img.addEventListener('click', function(){
+					var lb = document.getElementById('tf-lightbox');
+					document.getElementById('tf-lightbox-img').src = this.src;
+					lb.style.display = 'flex';
+				});
+			});
+			document.addEventListener('keydown', function(e){
+				if(e.key === 'Escape') document.getElementById('tf-lightbox').style.display='none';
+			});
+		</script>
+
+	</body>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
